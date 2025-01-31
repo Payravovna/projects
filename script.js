@@ -1,24 +1,35 @@
+// 1
 
-//1
-let arr = [
-    [{ a: { price: 20 } }],
-    [{ a: { price: 35 } }],
-    [{ a: { price: 44 } }]
-  ];
-  let total = 0;
-  console.log(arr);
-  console.log(arr[0][0].a.price + arr[1][0].a.price+ arr[2][0].a.price ); 
+let nums = [1,2,5,6,22,44,66,3,4,17,22,444];  
+let result = 0;
 
-//2
-    
-let arr1 = [1, 2, false, 'hello', 24, 'world', undefined, null, 'error', 22 , 24 , 25 ];
+nums.forEach(num =>  result += num);
 
-let number = arr1.filter(item => typeof item === 'number').length;
-if (number > 5) {
-  console.log('Good!');
-} 
- else {
-    console.log("Ошибка!");
-    
-}
+console.log('Результат: '+ result);
 
+
+
+// 2
+let arr = ["hello", 1234, "", false, NaN, 123, true, " ", null, "29.01.1992"];
+
+let string = [];
+let number = [];
+let object = [];
+let boolean = [];
+
+arr.filter(item => {
+    if (typeof item === "string") {
+        string.push(item);
+    } else if (typeof item === "number") {
+        number.push(item);
+    } else if (typeof item === "boolean") {
+        boolean.push(item);
+    } else {
+        object.push(item);
+    }
+});
+
+console.log("String", string);
+console.log("Number:", number);
+console.log("Boolen:", boolean);
+console.log("Object", object);
